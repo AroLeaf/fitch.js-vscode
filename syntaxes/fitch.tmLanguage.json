@@ -1,0 +1,53 @@
+{
+	"scopeName": "source.fitch",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Fitch",
+	"patterns": [
+		{ "include": "#comment" },
+		{ "include": "#identifier" },
+		{ "include": "#keyword"},
+		{ "include": "#literal" }
+	],
+	"repository": {
+		"comment": {
+			"patterns": [{
+				"name": "comment.line.double-slash.fitch",
+				"match": "//.*"
+			}, {
+				"name": "comment.block.fitch",
+				"begin": "/\\*",
+				"end": "\\*/"
+			}]
+		},
+		"identifier": {
+			"patterns": [{
+				"name": "support.constant",
+				"match": "\\b[a-w]\\w*?\\b"
+			}, {
+				"name": "variable.other",
+				"match": "\\b[xyz]\\w*?\\b"
+			}, {
+				"name": "support.function",
+				"match": "\\b[A-Z]\\w*?\\b"
+			}]
+		},
+		"keyword": {
+			"patterns": [{
+				"name": "keyword.operator",
+				"match": "(?<![-+][^\\r\\n\\S]*)(<->|->|---|[=!&|@%\\-+?])"
+			}, {
+				"name": "keyword.other",
+				"match": "\\$"
+			}]
+		},
+		"literal": {
+			"patterns": [{
+				"name": "constant.numeric",
+				"match": "\\b\\d+\\b"
+			}, {
+				"name": "string.unquoted",
+				"match": "(?<=[-+][^\\r\\n\\S]*)(<->|->|---|[=!&|@%\\-+?])"
+			}]
+		}
+	}
+}

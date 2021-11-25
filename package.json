@@ -1,0 +1,30 @@
+{
+    "name": "fitch-js",
+    "displayName": "fitch.js",
+    "publisher": "AroLeaf",
+    "description": "Syntax highlighting for fitch.js",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AroLeaf/fitch,js-vscode.git"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "fitch",
+            "aliases": ["Fitch", "fitch"],
+            "extensions": [".fitch"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "fitch",
+            "scopeName": "source.fitch",
+            "path": "./syntaxes/fitch.tmLanguage.json"
+        }]
+    }
+}
